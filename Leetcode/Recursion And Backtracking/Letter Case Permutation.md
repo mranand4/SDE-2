@@ -24,6 +24,7 @@ class Solution {
 
     private void backtrack(int idx, char[] arr, List<String> ans) {
         if(idx == arr.length) {
+            // new String({ ... }) converts char array to stringc
             ans.add(new String(arr));
         } else {
             char c = arr[idx];
@@ -55,9 +56,11 @@ class Solution {
 # Notes
 
 - We can't have logic like permute only upper case if char is lower case and vice versa as it'll skip permutations.
+- Don't process digits as they don't have lowercase or uppercase variants.
+- If we reach an index which equals length, it means we already have a permutaion so we can just add the curr. permutation to answer.
 - Was able to find optimized solution and code it up in less than 20 mins.
 
-# With backtrack returning ans directly
+# With backtrack returning ans directly (this is slower than above sol)
 
 ```java
 import java.util.List;
