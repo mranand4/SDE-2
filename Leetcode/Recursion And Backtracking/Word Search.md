@@ -34,6 +34,9 @@ class Solution {
         // do not move forward if char at curr index in word is not found at the current matrix cell
         if(word.charAt(idx) != board[r][c]) return false;
 
+        // now we know that we are traversing in sequence of words and all prev.
+        // chars in the word up until this point match our travaersal path.
+
         int nr = r;
         int nc = c;
 
