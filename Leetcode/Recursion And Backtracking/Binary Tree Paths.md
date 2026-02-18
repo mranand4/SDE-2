@@ -6,6 +6,14 @@ A leaf is a node with no children.
 
 https://leetcode.com/problems/binary-tree-paths/description/
 
+# Topics
+
+- String
+- Backtracking
+- Tree
+- Depth-First Search
+- Binary Tree
+
 # My naive answer
 
 /**
@@ -119,13 +127,6 @@ private List<String> bfsWithQueue(TreeNode root) {
 }
 
 # Notes
-
-Topics
-- String
-- Backtracking
-- Tree
-- Depth-First Search
-- Binary Tree
 
 Reference link for stack and queue based solutions - https://leetcode.com/problems/binary-tree-paths/solutions/68272/python-solutions-dfsstack-bfsqueue-dfs-r-k9fg/
 
