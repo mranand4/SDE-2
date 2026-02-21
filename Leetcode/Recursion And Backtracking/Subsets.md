@@ -62,6 +62,7 @@ class Solution {
 - We are only calculating permutations of number@index i with numbers after it.
 - With this logic we cover everything.
 - In for loop, we have to remove the last added number so as to get proper permutations, e.g. with 1 we have [1], [1,2], [1,2,3,4], [1,3], [1,3,4], [1,4]
+- This is the template for all of these sol: https://leetcode.com/problems/subsets/solutions/27281/a-general-approach-to-backtracking-quest-0ea5/
 
 # Todo
 
