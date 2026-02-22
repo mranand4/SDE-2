@@ -50,3 +50,4 @@ class Solution {
 - Using array list instead of linked list increased performance by 30%.
 - We'll get answer at the end i.e. when temp set's length == nums length not before that as we have to consider all the elements.
 - Draw permutation/backtrack tree on paper to understand better.
+- "Look forwards and backwards"
