@@ -1,6 +1,6 @@
 # Backtracking
 
-1. [VVIP] Common generic template which applies to many problems - https://leetcode.com/problems/subsets/solutions/27281/a-general-approach-to-backtracking-quest-0ea5/
+1. [Bible of backtracking] Common generic template which applies to many problems - https://leetcode.com/problems/subsets/solutions/27281/a-general-approach-to-backtracking-quest-0ea5/
 
 2. Reference link for stack and queue based solutions - https://leetcode.com/problems/binary-tree-paths/solutions/68272/python-solutions-dfsstack-bfsqueue-dfs-r-k9fg/
 
@@ -15,6 +15,12 @@
 - If another list has same size and hasthe same values in the same order, then it is considered equal.
 
 6. Subset, combinations are "look forward solution" or "forward seeking solution", permutation is a "look forward and backwards solution". In look forward sols, prev. elements are automatically ignored.
+
+6.1 Use once pattern involves a boolean array. e.g. Permutations 2, Combination Sum 3.
+
+7. Using array list instead of linked list increased a lot of performance (contrary to what I thought ...)
+
+8. Once you solve enough questions of a given type (say 10-12 or more) than you get a hang of it automatically. Imp thing is to solve a lot of questions of each type.
 
 # How to stop forgetting own solutions?
 
