@@ -14,7 +14,7 @@
 - List.equals() compares element-by-element
 - If another list has same size and hasthe same values in the same order, then it is considered equal.
 
-6. Subset, combinations are "look forward solution" or "forward seeking solution", permutation is a "look forward and backwards solution". In look forward sols, prev. elements are automatically ignored.
+6. Subset, combinations are "look forward solution" or "forward seeking solution", permutation is a "look forward and backwards solution". In look forward sols, prev. elements are automatically ignored. Identifying forward seeking or forward-backward seeking is also key to solving many of these problems. This is my own discovery.
 
 6.1 Use once pattern involves a boolean array. e.g. Permutations 2, Combination Sum 3.
 
