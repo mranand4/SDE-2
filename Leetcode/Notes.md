@@ -22,6 +22,19 @@
 
 8. Once you solve enough questions of a given type (say 10-12 or more) than you get a hang of it automatically. Imp thing is to solve a lot of questions of each type.
 
+9. Good article on string partionins using backtracking - https://leetcode.com/problems/palindrome-partitioning/solutions/182307/java-backtracking-template-general-appro-qseh/
+
 # How to stop forgetting own solutions?
 
 https://medium.com/@therubeprotocol/stop-forgetting-your-leetcode-solutions-a-retention-system-that-works-26acc13e83e0
+
+# Useful Resources
+
+## Prep Websites
+
+- https://www.techinterviewhandbook.org
+- https://seanprashad.com/leetcode-patterns/
+- https://github.com/jwasham/coding-interview-university
+- https://github.com/donnemartin/system-design-primer
+- https://algo.monster/
+
