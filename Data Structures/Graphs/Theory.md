@@ -504,9 +504,129 @@ void bfs(int start) {
 
 **Question keyword: Find the shortest path**
 
+## Weighted Graph Implementation Using Map And LinkedList
+
+```java
+package org.experiments;
+
+import java.util.*;
+
+// It's a simplistic implementation
+// Proper impl would require other checks and modifications
+// But it works for understanding purposes on how we go about
+// to implement this data structure.
+public class Main {
+
+    class GraphEdge {
+        int to;
+        int from;
+        int weight;
+
+        GraphEdge(int from, int to, int weigth) {
+            this.from = from;
+            this.to = to;
+            this.weight = weigth;
+        }
+
+        @Override
+        public String toString() {
+            return  to + " -> " + from + " costs " + weight;
+        }
+    }
+
+
+    Map<Integer, List<GraphEdge>> graph = new HashMap<>();
+
+    private void addNode(int n) {
+
+        // in a real implementation we would have more thorough
+        // checks like if the node is not already there etc.
+        graph.put(n, new LinkedList<>());
+    }
+
+    private void removeNode(int n) {
+        // removing node from graph
+        graph.remove(n);
+
+        // removing all connections to it ...
+        for(List<GraphEdge> adjNodes : graph.values()) {
+            for(GraphEdge node : adjNodes) {
+                if(node.to == n)
+                    adjNodes.remove(node);
+            }
+        }
+    }
+
+    private void addEdge(int from, int to, int weight) {
+        graph.get(from).add(new GraphEdge(from, to, weight));
+    }
+
+    private void removeEdge(int from, int to) {
+        List<GraphEdge> edges = graph.get(from);
+        for(GraphEdge edge : edges)
+            if(edge.to == to)
+                edges.remove(edge);
+    }
+
+    void bfs(int start) {
+        Set<Integer> visited = new HashSet<>();
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(start);
+
+        while(!queue.isEmpty()) {
+            int node = queue.poll();
+
+            // do not retraverse the node if it's already visited once
+            if(visited.contains(node)) continue;
+
+            //in real world, we would like much more info to be printed
+            System.out.println("At node: " + node);
+
+            // add it to visited node
+            visited.add(node);
+            List<GraphEdge> adjacentNodes = graph.get(node);
+            if(adjacentNodes == null || adjacentNodes.isEmpty()) continue;
+
+            for(GraphEdge i : adjacentNodes) {
+                queue.offer(i.to);
+            }
+        }
+    }
+
+    private void printGraph() {
+        for(Map.Entry<Integer, List<GraphEdge>> set : graph.entrySet()) {
+            System.out.println(set.getKey() + "->" + set.getValue());
+        }
+    }
+
+    public static void main(String[] args) {
+        Main ob = new Main();
+
+        for(int i=0; i<=8; i++) ob.addNode(i);
+
+        ob.addEdge(0, 1,2);
+        ob.addEdge(0, 2, 3);
+        ob.addEdge(0, 3, 1);
+        ob.addEdge(2, 6, 3);
+        ob.addEdge(6, 7,4);
+        ob.addEdge(7, 8, 5);
+        ob.addEdge(3, 4, 6);
+        ob.addEdge(3, 5, 10);
+
+        ob.printGraph();
+        ob.bfs(0);
+    }
+}
+```
+
+## Other Insights
+
+- Directed graphs can be used to simulate undirected graphs but reverse is not true. Probably that's why neo4j is based on a directed model.
+
 # Sources
 
 - https://www.youtube.com/playlist?list=PLFdAYMIVJQHNFJQt2eWA9Sx3R5eF32WPn
 - https://www.geeksforgeeks.org/dsa/adjacency-matrix-meaning-and-definition-in-dsa/
 - https://www.geeksforgeeks.org/dsa/adjacency-list-meaning-definition-in-dsa/
 - https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/
+- https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/
