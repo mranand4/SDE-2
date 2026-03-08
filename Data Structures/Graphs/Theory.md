@@ -619,6 +619,41 @@ public class Main {
 }
 ```
 
+# Minimum Spanning Tree
+
+## Spanning Tree
+
+- A spanning tree is a subgraph of a undirected connected graph such that all nodes are connected by minimum possible number of edges. 
+- There can be more than one spanning trees for a given graph.
+
+**An example graph**
+![An example graph](../../Images/mst_example_graph.png)
+
+**And it's spanning trees**
+![Spanning trees for the above graph](../../Images/mst_example_spanning_trees.png)
+
+## What's a minimum spanning tree(mst) ?
+
+- A MST is a spanning tree of a weighted graph werein the sum of weights is minimum i.e. all the nodes are connected with minimum expenditure(weights on edges).
+
+**An example weighted graph**
+![An example weighted graph](../../Images/mst_eg_graph_2.png)
+
+**Spanning trees for the same graph, encircled one is the mst**
+![An example weighted graph](../../Images/mst_eg_stg.png)
+ 
+## Applications of mst
+
+- Transportation: Laying roads between multiple cities while ensuring that all cities are connected and length of roads is shortest, transporting stuff between cities while ensuring minimum distance is travelled etc.
+- Power grid: Connecting multiple cities with power lines while ensuring least length of wires are used.
+- Water supply system: Same as above logic.
+- CDN
+- Internet networks etc.
+
+## Prim's algorithm
+
+// TODO
+
 ## Other Insights
 
 - Directed graphs can be used to simulate undirected graphs but reverse is not true. Probably that's why neo4j is based on a directed model.
