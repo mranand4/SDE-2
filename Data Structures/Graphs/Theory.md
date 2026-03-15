@@ -653,6 +653,7 @@ public class Main {
 ## Prim's algorithm
 
 // TODO
+https://stackoverflow.com/questions/1195872/when-should-i-use-kruskal-as-opposed-to-prim-and-vice-versa
 
 ## Other Insights
 
@@ -665,3 +666,6 @@ public class Main {
 - https://www.geeksforgeeks.org/dsa/adjacency-list-meaning-definition-in-dsa/
 - https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/
 - https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/
+cr
+
+https://www.decathlon.in/p/8750017/women-s-breathable-running-jacket-kiprun-run-100-dry-black-and-smoke-grey
