@@ -37,4 +37,5 @@ https://medium.com/@therubeprotocol/stop-forgetting-your-leetcode-solutions-a-re
 - https://github.com/jwasham/coding-interview-university
 - https://github.com/donnemartin/system-design-primer
 - https://algo.monster/
+- https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
 
