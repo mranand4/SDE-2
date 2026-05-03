@@ -257,3 +257,42 @@ public class HelloWorldSpringAnnotated {
    2. Any destroy method in a bean implementation class implementing the DisposableBean interface is invoked. If the same destruction method has already been invoked, it will not be invoked again.
    3. Any custom bean destruction method is invoked.
    4. Bean is then destroyed.
+
+## How are you going to create an ApplicationContext in an integration test?
+
+- We can use @ContextConfiguration annotation to define and ApplicationContext for your integration test as shown below:
+
+```java
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes=MyTestConfig.class)
+public class MySpringAppTests {
+
+  @Autowired
+  private MyService testService;
+}
+```
+
+- It’s worth noting that If you are using Junit version < 5 like JUnit 4 then you can also use @RunWith(SpringRunner.class) or @RunWith(MockitoJUnitRunner.class) etc.
+- If you are using Junit version = 5, so you have to use @ExtendWith(SpringExtension.class) or @ExtendWith(MockitoExtension.class) etc.
+
+## What is the preferred way to close an application context? Does Spring Boot do this for you?
+
+Normally, spring automatically closes the application context for us. In this scenario, the beans receive destruction callbacks in this order:
+
+1. @PreDestroy
+2. destroy() as defined by the DisposableBean
+callback interface
+3. A custom configured destroy() method.
+
+Alternatively, we can manually close it by invoking registerShutdownHook() method of the application context. We can also use the close() method but it's not preferred as it immediately closes the app, registerShutdownHook() waits for running processes to completed before closing.
+
+## What is the default bean scope used by Spring Boot?
+
+- Default bean scope is singleton scope.
+
+## Are beans lazily or eagerly instantiated by default? How do you alter this behavior?
+
+- By default, Spring beans are eagerly instantiated unless they are annotated to be initialized lazy using @Lazy annotation.
+- ApplicationContext implementations eagerly create and configure all singleton beans as part of the initialization process to avoid and detect all configuration errors immediately, as opposed to hours or even days later.
+- When this behavior is not desirable, you can prevent pre-instantiation of a singleton bean by marking the bean definition as being lazy-initialized. A lazy-initialized bean tells the IoC container to create a bean instance when it is first requested, rather than at startup.
+- When a lazy-initialized bean is a dependency of a singleton bean that is not lazy-initialized, the ApplicationContext creates the lazy-initialized bean at startup, because it must satisfy the singleton’s dependencies. The lazy-initialized bean is injected into a singleton bean elsewhere that is not lazy-initialized.
